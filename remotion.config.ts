@@ -7,7 +7,9 @@
 
 import { Config } from "@remotion/cli/config";
 import { enableTailwind } from '@remotion/tailwind-v4';
+import {enableSvgr} from './src/enable-svgr';
 
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
 Config.overrideWebpackConfig(enableTailwind);
+Config.overrideWebpackConfig(enableSvgr);

@@ -1,17 +1,18 @@
 import "./index.css";
 import { Composition } from "remotion";
-import { MyComposition } from "./Composition";
+import { MobileScene } from "./compositions/MobileScene";
+import { MOBILE_SCENE_CONFIG } from "./compositions/MobileScene/constants";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
-        id="MyComp"
-        component={MyComposition}
-        durationInFrames={60}
-        fps={30}
-        width={1280}
-        height={720}
+        id={MOBILE_SCENE_CONFIG.id}
+        component={MobileScene}
+        durationInFrames={MOBILE_SCENE_CONFIG.durationInFrames}
+        fps={MOBILE_SCENE_CONFIG.fps}
+        width={MOBILE_SCENE_CONFIG.width}
+        height={MOBILE_SCENE_CONFIG.height}
       />
     </>
   );

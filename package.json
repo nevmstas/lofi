@@ -7,10 +7,11 @@
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.374",
+    "@remotion/tailwind-v4": "4.0.374",
+    "@svgr/webpack": "^8.1.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "remotion": "4.0.374",
-    "@remotion/tailwind-v4": "4.0.374",
     "tailwindcss": "4.0.0"
   },
   "devDependencies": {
@@ -22,8 +23,11 @@
     "typescript": "5.8.2"
   },
   "scripts": {
+    "start": "remotionb studio",
     "dev": "remotionb studio",
     "build": "remotionb bundle",
+    "render": "remotionb render MobileScene out/video.mp4",
+    "render:hq": "remotionb render MobileScene out/video-hq.mp4 --quality 95",
     "upgrade": "remotionb upgrade",
     "lint": "eslint src && tsc"
   },

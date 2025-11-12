@@ -9,7 +9,18 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "baseUrl": ".",
+    "paths": {
+      "@assets": ["./src/assets"],
+      "@assets/*": ["./src/assets/*"],
+      "@components": ["./src/components"],
+      "@components/*": ["./src/components/*"],
+      "@utils": ["./src/utils"],
+      "@utils/*": ["./src/utils/*"],
+      "@compositions": ["./src/compositions"],
+      "@compositions/*": ["./src/compositions/*"]
+    }
   },
   "exclude": ["remotion.config.ts"]
 }
