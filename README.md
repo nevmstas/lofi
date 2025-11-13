@@ -10,6 +10,10 @@ A simple lofi scene animation created to showcase how to work with [Remotion](ht
 
 This project showcases how to work with [Remotion](https://www.remotion.dev/) for creating animations programmatically with React.
 
+## Assets
+
+All assets in this project were drawn by me. You can view the design files on [Figma](https://www.figma.com/design/N3IUZAM8aHFVVHRDhI4VEq/Lofi-remotion?node-id=0-1&t=xXN4T0rJkQKfqFls-1).
+
 ## Installation
 
 ```bash
