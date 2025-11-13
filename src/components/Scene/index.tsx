@@ -1,51 +1,70 @@
-import { Table } from '../Table';
-import { Person } from '../Person';
-import { Cat } from '../Cat';
-import { ANIMATION_TIMING, Z_INDEX } from '../../compositions/MobileScene/constants';
+import React from 'react';
+import TableSvg from '../../assets/table.svg';
+import { Person } from '../person';
+import { Cat } from '../cat';
+import { Window } from '../window';
+import { FadeIn } from '../fade-in';
+import { ANIMATION_TIMING, Z_INDEX } from '../../compositions/mobile-scene/constants';
 
 interface SceneProps {
   backgroundColor?: string;
 }
 
-export const Scene: React.FC<SceneProps> = ({ backgroundColor = '#E8DCC7' }) => {
+export const Scene: React.FC<SceneProps> = ({ backgroundColor = '#4D25AA' }) => {
   return (
     <div
-      className="relative w-full h-full overflow-hidden"
+      className="relative h-full w-full overflow-hidden"
       style={{ backgroundColor }}
     >
-      {/* Background gradient for depth */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0) 50%)',
-        }}
-      />
+      <FadeIn
+        from="top"
+        delay={ANIMATION_TIMING.windowEntranceDelay}
+        distance={150}
+        className="absolute top-[400px] left-2"
+        style={{ zIndex: Z_INDEX.window }}
+      >
+        <Window />
+      </FadeIn>
 
-      {/* Table - positioned at the bottom */}
-      <div style={{ zIndex: Z_INDEX.table }}>
-        <Table entranceDelay={ANIMATION_TIMING.tableEntranceDelay} />
-      </div>
+      <FadeIn
+        from="bottom"
+        delay={ANIMATION_TIMING.tableEntranceDelay}
+        distance={150}
+        className="absolute bottom-0 -left-4 right-0 flex items-end justify-center"
+        style={{ zIndex: Z_INDEX.table }}
+      >
+        <TableSvg />
+      </FadeIn>
 
-      {/* Person with laptop - positioned on the table */}
-      <div style={{ zIndex: Z_INDEX.person }}>
+      <FadeIn
+        from="right"
+        delay={ANIMATION_TIMING.personEntranceDelay}
+        distance={200}
+        className="absolute bottom-[648px] left-190"
+        style={{ zIndex: Z_INDEX.person }}
+      >
         <Person
-          entranceDelay={ANIMATION_TIMING.personEntranceDelay}
-          className="bottom-[648px] left-190"
           eyeMovementDuration={ANIMATION_TIMING.eyeMovementDuration}
           blinkInterval={ANIMATION_TIMING.blinkInterval}
         />
-      </div>
+      </FadeIn>
 
-      {/* Cat - positioned beside the person */}
-      <div style={{ zIndex: Z_INDEX.cat }}>
+      <FadeIn
+        from="left"
+        delay={ANIMATION_TIMING.catEntranceDelay}
+        distance={200}
+        config={{
+          damping: 80,
+          mass: 0.8,
+        }}
+        className="absolute bottom-[648px] left-20"
+        style={{ zIndex: Z_INDEX.cat }}
+      >
         <Cat
-          entranceDelay={ANIMATION_TIMING.catEntranceDelay}
           breathingDuration={ANIMATION_TIMING.breathingDuration}
           tailCurlDuration={ANIMATION_TIMING.tailCurlDuration}
-          className="bottom-[648px] left-10"
         />
-      </div>
+      </FadeIn>
     </div>
   );
 };
-

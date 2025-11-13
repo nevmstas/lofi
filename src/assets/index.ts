@@ -19,3 +19,7 @@ export { default as CatFrontLeftPaw } from './cat/front-left-paw.svg';
 export { default as CatFrontRightPaw } from './cat/front-righ-paw.svg';
 export { default as CatBackPaw } from './cat/back-paw.svg';
 
+// Environment
+export { default as Planet } from './planet.svg';
+export { default as Window } from './window.svg';
+

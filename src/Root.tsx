@@ -1,7 +1,7 @@
 import "./index.css";
 import { Composition } from "remotion";
-import { MobileScene } from "./compositions/MobileScene";
-import { MOBILE_SCENE_CONFIG } from "./compositions/MobileScene/constants";
+import { MobileScene } from "./compositions/mobile-scene";
+import { MOBILE_SCENE_CONFIG } from "./compositions/mobile-scene/constants";
 
 export const RemotionRoot: React.FC = () => {
   return (

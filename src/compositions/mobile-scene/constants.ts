@@ -8,6 +8,8 @@ export const MOBILE_SCENE_CONFIG = {
 } as const;
 
 export const Z_INDEX = {
+  window: 5,
+  planet: 6,
   table: 10,
   person: 20,
   cat: 30,
@@ -16,12 +18,14 @@ export const Z_INDEX = {
 
 export const ANIMATION_TIMING = {
   sceneEntranceDelay: 0,
-  tableEntranceDelay: 0,
-  personEntranceDelay: 15,
-  catEntranceDelay: 30,
+  windowEntranceDelay: 0, // First: window appears
+  tableEntranceDelay: 0, // First: table appears with window
+  personEntranceDelay: 20, // Second: person appears after window/table
+  catEntranceDelay: 40, // Last: cat appears after person
   breathingDuration: 90, // frames for one complete breath
   tailCurlDuration: 120, // frames for one complete tail curl
   eyeMovementDuration: 180, // frames for one complete eye movement cycle
   blinkInterval: 150, // frames between blinks
+  glowDuration: 60, // frames for one complete glow pulse
 } as const;
 

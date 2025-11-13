@@ -1,9 +1,10 @@
+import React from 'react';
 import { AbsoluteFill } from 'remotion';
-import { Scene } from '../../components/Scene';
+import { Scene } from '../../components/scene';
 
 export const MobileScene: React.FC = () => {
   return (
-    <AbsoluteFill className="bg-[#E8DCC7]">
+    <AbsoluteFill className="bg-[#4D25AA]">
       <Scene />
     </AbsoluteFill>
   );
