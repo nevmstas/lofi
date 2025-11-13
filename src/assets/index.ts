@@ -23,3 +23,6 @@ export { default as CatBackPaw } from './cat/back-paw.svg';
 export { default as Planet } from './planet.svg';
 export { default as Window } from './window.svg';
 
+// Coffee cup
+export { default as CoffeeCup } from './coffe-cup.svg';
+

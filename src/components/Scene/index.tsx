@@ -2,6 +2,7 @@ import React from 'react';
 import TableSvg from '../../assets/table.svg';
 import { Person } from '../person';
 import { Cat } from '../cat';
+import { CoffeeCup } from '../coffee-cup';
 import { Window } from '../window';
 import { FadeIn } from '../fade-in';
 import { ANIMATION_TIMING, Z_INDEX } from '../../compositions/mobile-scene/constants';
@@ -40,13 +41,27 @@ export const Scene: React.FC<SceneProps> = ({ backgroundColor = '#4D25AA' }) => 
         from="right"
         delay={ANIMATION_TIMING.personEntranceDelay}
         distance={200}
-        className="absolute bottom-[648px] left-190"
+        className="absolute bottom-[648px] left-197"
         style={{ zIndex: Z_INDEX.person }}
       >
         <Person
           eyeMovementDuration={ANIMATION_TIMING.eyeMovementDuration}
           blinkInterval={ANIMATION_TIMING.blinkInterval}
         />
+      </FadeIn>
+
+      <FadeIn
+        from="bottom"
+        delay={ANIMATION_TIMING.coffeeCupEntranceDelay}
+        distance={100}
+        config={{
+          damping: 90,
+          mass: 0.6,
+        }}
+        className="absolute bottom-[648px] left-[350px]"
+        style={{ zIndex: Z_INDEX.coffeeCup }}
+      >
+        <CoffeeCup />
       </FadeIn>
 
       <FadeIn
@@ -57,7 +72,7 @@ export const Scene: React.FC<SceneProps> = ({ backgroundColor = '#4D25AA' }) => 
           damping: 80,
           mass: 0.8,
         }}
-        className="absolute bottom-[648px] left-20"
+        className="absolute bottom-[648px] left-10"
         style={{ zIndex: Z_INDEX.cat }}
       >
         <Cat

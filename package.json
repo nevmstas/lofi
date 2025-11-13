@@ -26,8 +26,7 @@
     "start": "remotionb studio",
     "dev": "remotionb studio",
     "build": "remotionb bundle",
-    "render": "remotionb render MobileScene out/video.mp4",
-    "render:hq": "remotionb render MobileScene out/video-hq.mp4 --quality 95",
+    "render": "npx remotion render mobile-scene out/lofi-scene.gif",
     "upgrade": "remotionb upgrade",
     "lint": "eslint src && tsc"
   },
